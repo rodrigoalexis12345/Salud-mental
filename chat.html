@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/Mask group.png" type="image/png">
+    <title>Tranquiliza </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ADD8E6;
+            display: flex;
+            justify-content: center;
+            /* Centrar horizontalmente */
+            align-items: center;
+            /* Centrar verticalmente */
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            flex-direction: column;
+            /* Colocar elementos en columna */
+        }
+
+        #chat-title {
+            cursor: pointer;
+            background-color: #1E3A8A;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            /* Fijo en la pantalla */
+            bottom: 20px;
+            /* Ajusta la posición según tu preferencia */
+            right: 20px;
+            /* Ajusta la posición según tu preferencia */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        #chat-container {
+            width: 400px;
+            height: 500px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            background-color: white;
+            display: none;
+            /* Ocultar inicialmente */
+            position: absolute;
+            bottom: 70px;
+            /* Ajusta la posición según tu preferencia */
+            right: 20px;
+            /* Ajusta la posición según tu preferencia */
+            z-index: 1000;
+            /* Asegurarse de que esté encima de otros elementos */
+        }
+
+        #chat-box {
+            flex-grow: 1;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        #user-input {
+            width: calc(100% - 60px);
+            padding: 10px;
+        }
+
+        #send-button {
+            width: 50px;
+            padding: 10px;
+            background-color: #1E3A8A;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .typing-indicator {
+            font-style: italic;
+            color: #888;
+        }
+
+        .user-message {
+            background-color: #e0f7fa;
+            padding: 8px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+        .ai-message {
+            background-color: #ffe0b2;
+            padding: 8px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+        .video-call-container {
+            display: flex;
+            justify-content: center;
+            /* Centrar las pantallas de video */
+            margin-bottom: 20px;
+            position: relative;
+            width: 850px;
+            /* Ajustar según el tamaño deseado */
+            height: 450px;
+            /* Ajustar según el tamaño deseado */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            /* Agregar espacio interno */
+            box-sizing: border-box;
+            /* Incluir el padding en el tamaño total */
+        }
+
+        .video-box {
+            width: 45%;
+            /* Ajustar el tamaño de las pantallas */
+            height: 100%;
+            /* Altura completa del contenedor de video */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+            margin: 0 10px;
+            /* Espacio entre las pantallas */
+            background-color: #e9ecef;
+            /* Fondo para las pantallas */
+        }
+
+        .video-box h3 {
+            text-align: center;
+            margin: 0;
+            padding: 5px;
+            background-color: #1E3A8A;
+            color: white;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+
+        }
+
+        .control-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+            font-size: 24px;
+            /* Tamaño de los íconos */
+        }
+
+        .control-button:hover {
+            color: #1E3A8A;
+            /* Color al pasar el mouse */
+        }
+
+        #connect-button {
+            width: 200px;
+            padding: 10px;
+            background-color: #1E3A8A;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-left: 15px;
+            /* Espacio superior */
+        }
+
+        h2 {
+            text-align: center;
+            margin: 10px 0;
+            /* Espacio en el margen superior e inferior */
+            color: #1E3A8A;
+            /* Color del texto */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chat-title">💬</div> <!-- Botón en forma de bolita -->
+
+    <h2>Reunión con tu Psicólogo</h2> <!-- Título de la reunión -->
+
+    <div class="video-call-container">
+        <div class="video-box">
+            <h3>Psicólogo</h3>
+            <!-- Aquí puedes añadir un video o imagen del psicólogo -->
+        </div>
+        <div class="video-box">
+            <h3>Paciente</h3>
+            <!-- Aquí puedes añadir un video o imagen del paciente -->
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="connect-button">Conectar con Psicólogo</button>
+        <button id="connect-button">Abandonar Reunión</button>
+        <button id="connect-button" onclick="window.location.href='index.html'">Volver a la Página
+            Principal</button>
+    </div>
+
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Escribe tu mensaje aquí..." />
+        <button id="send-button">Enviar</button>
+    </div>
+
+    <script>
+        const sendButton = document.getElementById('send-button');
+        const userInput = document.getElementById('user-input');
+        const chatBox = document.getElementById('chat-box');
+        const chatContainer = document.getElementById('chat-container');
+        const chatTitle = document.getElementById('chat-title');
+
+        // Información sobre salud mental
+        const mentalHealthInfo = {
+            "hola": "🌟 ¡Hola! Bienvenido/a a nuestro espacio de salud mental. 🌟 Estamos aquí para ayudarte y acompañarte en tu camino hacia el bienestar emocional. Si tienes alguna pregunta o tema en particular que te gustaría explorar, no dudes en decírmelo. Estoy aquí para escucharte y ofrecerte apoyo. 💬✨",
+
+            "estres": "😟 El estrés es una reacción natural que puedes experimentar ante situaciones desafiantes. Puede ser difícil reconocer cuándo estás estresado, pero es importante prestar atención a tu cuerpo y emociones. Cuando te sientas así, tómate un tiempo para ti. 🧘‍♀️ Practicar actividades como la meditación, la respiración profunda o escribir un diario sobre tus preocupaciones puede ayudarte a aclarar tus pensamientos. Hacer algo creativo, como dibujar o tocar un instrumento, te permite liberar tensiones. 🎨 Gestionar tu tiempo y establecer prioridades puede ayudarte a sentirte más en control. Recuerda que el estrés es parte de la vida, pero tienes herramientas para manejarlo y mejorar tu bienestar. 💪",
+
+            "ansiedad": "😰 La ansiedad puede ser una sensación aterradora. Puede parecer que pierdes el control y tus pensamientos se vuelven caóticos. Cuando sientas ansiedad, hablar con alguien de confianza puede ser realmente útil. Identificar tus desencadenantes de ansiedad te permite anticiparte y prepararte mejor. Prueba técnicas de relajación, como la respiración consciente y la visualización, para calmarte en esos momentos. 🌈 Salir a caminar o practicar yoga puede proporcionarte una salida positiva. La práctica de la atención plena te ayudará a enfocarte en el presente y a dejar de preocuparte tanto por el futuro. 🌻 No estás solo en esto; muchos enfrentan ansiedad y buscar apoyo es importante. 🤝",
+
+            "depresion": "😞 La depresión es un desafío que muchos enfrentan, y puede manifestarse como tristeza intensa y falta de energía. Si alguna vez te sientes así, es fundamental buscar apoyo. Hablar sobre tus sentimientos con un amigo, familiar o profesional puede ser un gran alivio. También considera actividades que te hagan sentir bien, como escuchar música, salir a caminar o hacer ejercicio; estas acciones liberan endorfinas que mejoran tu estado de ánimo. Cuidar de tu salud mental también significa establecer límites; aprender a decir 'no' cuando es necesario. Practica la gratitud escribiendo tres cosas por las que estás agradecido cada día. Estas pequeñas acciones pueden tener un gran impacto en cómo te sientes a lo largo del tiempo. 🌟",
+
+            "mindfulness": "🌸 La atención plena es una práctica poderosa que puede ayudarte a estar presente en el momento. Puedes comenzar a practicar la atención plena dedicando unos minutos al día a enfocarte en tu respiración y en las sensaciones de tu cuerpo. Inhala profundamente por la nariz y exhala por la boca; esto puede calmar tu sistema nervioso. La meditación guiada es otra opción; hay muchas aplicaciones y videos que te pueden ayudar a comenzar. Practicar yoga o estiramientos suaves también es una excelente manera de liberar tensiones. Crear un ambiente relajante en tu hogar, con música suave y luces tenues, puede hacer maravillas para tu bienestar. Encuentra lo que funcione mejor para ti y hazlo parte de tu rutina diaria. 🌈",
+
+            // Agrega más respuestas según sea necesario.
+        };
+
+        function appendMessage(message, type) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add(type === 'user' ? 'user-message' : 'ai-message');
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight; // Desplazar hacia abajo
+        }
+
+        sendButton.addEventListener('click', () => {
+            const userText = userInput.value.trim().toLowerCase();
+            if (userText) {
+                appendMessage(userText, 'user');
+                userInput.value = '';
+
+                // Mostrar un indicador de escritura
+                const typingIndicator = document.createElement('div');
+                typingIndicator.classList.add('typing-indicator');
+                typingIndicator.textContent = "La IA está pensando...";
+                chatBox.appendChild(typingIndicator);
+                chatBox.scrollTop = chatBox.scrollHeight; // Desplazar hacia abajo
+
+                // Respuesta de la IA con un retraso
+                setTimeout(() => {
+                    // Eliminar el indicador de escritura
+                    chatBox.removeChild(typingIndicator);
+
+                    const response = mentalHealthInfo[userText] || "🤔 Lo siento, no tengo información sobre eso. Pero estoy aquí para escuchar. ¿Hay algo más en lo que te pueda ayudar?";
+                    appendMessage(response, 'ai');
+                }, 1500); // Retraso de 1500 ms (1.5 segundos)
+            }
+        });
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendButton.click();
+            }
+        });
+
+        // Mostrar/Ocultar el chat al hacer clic en la bolita
+        chatTitle.addEventListener('click', () => {
+            if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+                chatContainer.style.display = 'flex'; // Mostrar el chat
+            } else {
+                chatContainer.style.display = 'none'; // Ocultar el chat
+            }
+        });
+    </script>
+</body>
+
+</html>

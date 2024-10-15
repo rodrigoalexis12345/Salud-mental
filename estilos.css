@@ -1,3 +1,142 @@
-*{
-    background-color: antiquewhite;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #ADD8E6;
+    background-size: cover;
+    /* Hace que la imagen cubra todo el fondo */
+    background-position: center;
+    /* Centra la imagen */
+    background-attachment: fixed;
+    /* Fija la imagen para que no se mueva al hacer scroll */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+
+}
+
+.navbar {
+    background-color: #1E3A8A;
+    /* Azul oscuro */
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.logo img {
+    height: 40px;
+    /* Ajusta según el tamaño del ícono */
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: rgb(29, 195, 192);
+}
+
+.caja {
+    display: flex;
+    justify-content: end;
+    background-color: green;
+    width: 1300px;
+    height: 400px;
+
+
+}
+
+.caja img {
+    width: 350px;
+    height: 350px;
+    margin-top: 40px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    /* Alinea verticalmente el contenido */
+    justify-content: space-between;
+    /* Espacio entre el texto y la imagen */
+    padding: 20px;
+    background-color: #ADD8E6;
+    /* Color de fondo opcional */
+}
+
+.text {
+    max-width: 50%;
+    /* Ajusta para definir cuánto espacio ocupará el texto */
+
+    font-family: "Afacad Flux", sans-serif;
+    font-size: 17px;
+}
+
+.image img {
+    max-width: 100%;
+    /* La imagen se ajusta al contenedor */
+    height: auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    /* Centra el botón */
+    margin-top: 20px;
+    /* Espacio entre la imagen y el botón */
+}
+
+.mi-boton {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #23b6c9;
+    /* Color de fondo del botón */
+    color: white;
+    /* Color del texto del botón */
+    border: none;
+    /* Sin borde */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Transiciones suaves */
+    margin-bottom: 25px;
+}
+
+.mi-boton:hover {
+    background-color: #baa60c;
+    /* Color al pasar el mouse */
+    transform: scale(1.05);
+    /* Efecto de agrandamiento */
 }

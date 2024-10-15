@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!--Para poner los tipos de letra-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <!-- Para poner los tipos de letra -->
+    <link rel="icon" href="img/Mask group.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tranquiliza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ADD8E6;
+            /* Color de fondo */
+            margin: 0;
+            padding: 20px;
+            /* Espaciado alrededor del cuerpo */
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            /* Espacio entre texto y imagen */
+            align-items: center;
+            /* Alinear verticalmente */
+            margin: 20px;
+            /* Espacio alrededor del contenedor */
+            background-color: white;
+            /* Fondo blanco para el contenedor */
+            padding: 20px;
+            /* Espaciado interno del contenedor */
+            border-radius: 5px;
+            /* Bordes redondeados */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            /* Sombra alrededor del contenedor */
+        }
+
+        h2 {
+            margin-bottom: 50px;
+            font-size: 45px;
+        }
+
+        p {
+            font-size: 20px;
+
+        }
+
+        .text-section {
+            font-family: "Afacad Flux", sans-serif;
+            flex: 1;
+            /* Tomar espacio disponible */
+            margin-right: 20px;
+            /* Espacio entre texto e imagen */
+        }
+
+        .image-section {
+            flex: 1;
+            /* Tomar espacio disponible */
+        }
+
+        .image-section img {
+            max-width: 100%;
+            /* Ajustar la imagen al tamaño del contenedor */
+            height: auto;
+            /* Mantener la relación de aspecto */
+            border-radius: 5px;
+            /* Bordes redondeados de la imagen */
+            margin-left: 150px;
+        }
+
+        .button-section {
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        button {
+            padding: 15px 15px;
+            /* Aumentar el espaciado interno */
+            background-color: #1E3A8A;
+            /* Color de fondo */
+            color: white;
+            /* Color del texto */
+            border: none;
+            /* Sin borde */
+            border-radius: 10px;
+            /* Bordes más redondeados */
+            cursor: pointer;
+            /* Cambiar el cursor al pasar el mouse */
+            font-size: 15px;
+            /* Aumentar tamaño de fuente */
+            transition: background-color 0.4s, transform 0.4s;
+            /* Añadir transición */
+        }
+
+        button:hover {
+            background-color: #2c5282;
+            /* Color al pasar el mouse */
+            transform: scale(1.05);
+            /* Aumentar ligeramente el tamaño del botón */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-container">
+        <div class="text-section">
+            <h2>Bienvenido</h2>
+            <p>🌟 Es un verdadero honor para nosotros contar con tu presencia en Tranquiliza. Sabemos que dar el primer
+                paso hacia el bienestar mental puede ser un desafío, pero aquí estás, y eso es un gran avance. 💪 Cada
+                paso que des en este espacio te acercará más a un estado de paz y equilibrio. 🕊️ No subestimes el poder
+                de los pequeños logros; cada uno de ellos cuenta y se suma a tu crecimiento personal. 🌱 Estamos aquí
+                para apoyarte en este viaje, brindándote el acompañamiento y las herramientas que necesitas para avanzar
+                en tu proceso. 🤝 Recuerda, no estás solo. Juntos, lograremos grandes cosas y construiremos un camino
+                hacia un bienestar mental duradero y significativo. ✨ Cada día es una nueva oportunidad para aprender,
+                crecer y encontrar la felicidad que mereces. 🌈 ¡Bienvenido a Tranquiliza!
+            </p>
+        </div>
+        <div class="image-section">
+            <img src="img/image 2.png" alt="Descripción de la imagen" />
+        </div>
+    </div>
+    <div class="button-section">
+        <button onclick="window.location.href='login.html'">Registrarse</button>
+    </div>
+</body>
+
+</html>

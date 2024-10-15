@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!--Para poner los tipos de letra-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/Mask group.png" type="image/png">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Tranquiliza</title>
+    <style>
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+            /* Centrar el contenedor horizontalmente */
+            background-color: white;
+            padding: 30px;
+            /* Aumentar el relleno */
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            /* Aumentar el ancho máximo del formulario */
+            width: 90%;
+            /* Asegura que el formulario se adapte al contenedor */
+        }
+
+        .psychologist-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            padding: 10px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .psychologist-card:hover {
+            border-color: #1E3A8A;
+        }
+
+        .psychologist-card input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .psychologist-info {
+            flex: 1;
+        }
+
+        .psychologist-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            object-fit: cover;
+            margin-left: 20px;
+        }
+
+        .button-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #1E3A8A;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #15c662;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="img/Mask group.png" alt="Logo">
+                Inicio
+            </a>
+            <ul class="nav-links">
+                <li><a href="reuniones.html">Reuniones</a></li>
+                <li><a href="audiolibros.html">Audiolibros</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="reels.html">Reels</a></li>
+                <li><a href="juegos.html">Juegos</a></li>
+                <li><a href="progreso.html">Progreso</a></li>
+                <li><a href="ingresar.html">INGRESAR</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h2>Selecciona un Psicólogo</h2>
+        <form id="psychologist-form">
+            <label class="psychologist-card">
+                <input type="radio" name="psychologist" value="1" required>
+                <div class="psychologist-info">
+                    <h3>Dr. Juan Pérez</h3>
+                    <p>Especialidad: Ansiedad y Estrés</p>
+                    <p>Horario: 10:00 AM - 1:00 PM</p>
+                    <p>Modalidad: Virtual</p>
+                </div>
+                <img class="psychologist-image" src="img/Psc12.png" alt="Dr. Juan Pérez">
+            </label>
+
+            <label class="psychologist-card">
+                <input type="radio" name="psychologist" value="2">
+                <div class="psychologist-info">
+                    <h3>Dra. María Gómez</h3>
+                    <p>Especialidad: Ansiedad y Estrés</p>
+                    <p>Horario: 1:00 PM - 4:00 PM</p>
+                    <p>Modalidad: Virtual</p>
+                </div>
+                <img class="psychologist-image" src="img/Psc1 .png" alt="Dra. María Gómez">
+            </label>
+
+            <label class="psychologist-card">
+                <input type="radio" name="psychologist" value="3">
+                <div class="psychologist-info">
+                    <h3>Dr. Carlos Rodríguez</h3>
+                    <p>Especialidad: Terapia Familiar</p>
+                    <p>Horario: 4:00 PM - 6:00 PM</p>
+                    <p>Modalidad: Virtual</p>
+                </div>
+                <img class="psychologist-image" src="img/Psc3.png" alt="Dr. Carlos Rodríguez">
+            </label>
+
+            <div class="button-section">
+                <a href="cita.html">
+                    <button type="button">Confirmar Cita</button>
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
