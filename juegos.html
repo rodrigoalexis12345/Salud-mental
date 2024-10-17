@@ -2,11 +2,9 @@
 <html lang="es">
 
 <head>
-    <!--Para poner los tipos de letra-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
-    <!-- Para poner los tipos de letra -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/Mask group.png" type="image/png">
@@ -16,21 +14,19 @@
         p {
             font-size: 18px;
             font-family: "Afacad Flux", sans-serif;
-
         }
 
         a {
             text-decoration: none;
         }
 
-        a :hover {
-
+        a:hover {
             color: rgb(175, 11, 11);
         }
 
         h2 {
             text-align: center;
-
+            font-family: "Afacad Flux", sans-serif;
         }
 
         .header1 {
@@ -45,20 +41,16 @@
             padding: 20px;
             flex-wrap: wrap;
             max-width: 1100px;
-            /* Ajusta según el tamaño de las tarjetas */
             margin: 0 auto;
-            /* Centrar el contenedor */
         }
 
         .card {
             background-color: #E6F7F5;
-            /* Fondo suave verde menta */
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             width: 200px;
             padding: 10px;
             flex: 1 1 200px;
-            /* Asegura que las tarjetas se ajusten y pasen a la siguiente línea si es necesario */
         }
 
         .card img {
@@ -70,7 +62,27 @@
             font-size: 18px;
             margin: 10px 0 0;
             color: #4A5568;
-            /* Gris oscuro suave */
+        }
+
+        p {
+            color: black;
+        }
+
+        .card button {
+            background-color: #0062cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 15px auto;
+        }
+
+        .card button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -102,89 +114,95 @@
             entretenimiento, sino que también está pensado para mejorar tu estado de ánimo, potenciar tu concentración y
             brindarte momentos de alegría.<br> ¡Sumérgete en la diversión y cuida tu salud mental mientras juegas!
 
-
         </p>
 
-    </header>
+        <section class="courses">
+            <div class="card">
+                <a href="">
+                    <img src="img/juegos/juego1.jpg" alt="Curso 1">
+                    <h2>Rain on your parade</h2>
+                    <button>▶️ Jugar</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="">
+                    <img src="img/juegos/juego2 .jpg" alt="Curso 1">
+                    <h2>The seed unit</h2>
+                    <button>▶️ Jugar</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="">
+                    <img src="img/juegos/juego3.jpg" alt="Curso 1">
+                    <h2>Super Mario World</h2>
+                    <button>▶️ Jugar</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="">
+                    <img src="img/juegos/juego4.jpg" alt="Curso 1">
+                    <h2>Super Mario 3</h2>
+                    <button>▶️ Jugar</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="">
+                    <img src="img/juegos/juego5.jpg" alt="Curso 1">
+                    <h2>Donkey Kong country 2</h2>
+                    <button>▶️ Jugar</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="">
+                    <img src="img/juegos/juego6.jpg" alt="Curso 1">
+                    <h2>Super Mario Galaxi 2</h2>
+                    <button>▶️ Jugar</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="">
+                    <img src="img/juegos/juego7.jpg" alt="Curso 1">
+                    <h2>It takes two</h2>
+                    <button>▶️ Jugar</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="">
+                    <img src="img/juegos/juego8.jpg" alt="Curso 1">
+                    <h2>Super Mario 64</h2>
+                    <button>▶️ Jugar</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="">
+                    <img src="img/juegos/juego9.jpg" alt="Curso 1">
+                    <h2>Monkey island 2</h2>
+                    <button>▶️ Jugar</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="">
+                    <img src="img/juegos/juego10.jpg" alt="Curso 1">
+                    <h2>Aguante Imaginario</h2>
+                    <button>▶️ Jugar</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="">
+                    <img src="img/juegos/juego11.jpg" alt="Curso 1">
+                    <h2>Raimbow Fuego</h2>
+                    <button>▶️ Jugar</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="">
+                    <img src="img/juegos/juego12.jpg" alt="Curso 1">
+                    <h2>Familia</h2>
+                    <button>▶️ Jugar</button>
+                </a>
+            </div>
 
-    <section class="courses">
-        <div class="card">
-            <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 1</h2>
-            </a>
-        </div>
-        <div class="card">
-            <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 1</h2>
-            </a>
-        </div>
-        <div class="card">
-            <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 1</h2>
-            </a>
-        </div>
-        <div class="card">
-            <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 1</h2>
-            </a>
-        </div>
-        <div class="card">
-            <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
-            </a>
-        </div>
-        <div class="card">
-            <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
-            </a>
-        </div>
-        <div class="card">
-            <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
-            </a>
-        </div>
-        <div class="card">
-            <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
-            </a>
-        </div>
-        <div class="card">
-            <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
-            </a>
-        </div>
-        <div class="card">
-            <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
-            </a>
-        </div>
-        <div class="card">
-            <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
-            </a>
-        </div>
-        <div class="card">
-            <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
-            </a>
-        </div>
-
-
-
-
-    </section>
+        </section>
 </body>
 
 </html>

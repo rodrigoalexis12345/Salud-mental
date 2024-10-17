@@ -2,11 +2,9 @@
 <html lang="es">
 
 <head>
-    <!--Para poner los tipos de letra-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
-    <!-- Para poner los tipos de letra -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/Mask group.png" type="image/png">
@@ -16,21 +14,19 @@
         p {
             font-size: 18px;
             font-family: "Afacad Flux", sans-serif;
-
         }
 
         a {
             text-decoration: none;
         }
 
-        a :hover {
-
+        a:hover {
             color: rgb(175, 11, 11);
         }
 
         h2 {
             text-align: center;
-
+            font-family: "Afacad Flux", sans-serif;
         }
 
         .header1 {
@@ -45,20 +41,16 @@
             padding: 20px;
             flex-wrap: wrap;
             max-width: 1100px;
-            /* Ajusta según el tamaño de las tarjetas */
             margin: 0 auto;
-            /* Centrar el contenedor */
         }
 
         .card {
             background-color: #E6F7F5;
-            /* Fondo suave verde menta */
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             width: 200px;
             padding: 10px;
             flex: 1 1 200px;
-            /* Asegura que las tarjetas se ajusten y pasen a la siguiente línea si es necesario */
         }
 
         .card img {
@@ -70,7 +62,27 @@
             font-size: 18px;
             margin: 10px 0 0;
             color: #4A5568;
-            /* Gris oscuro suave */
+        }
+
+        p {
+            color: black;
+        }
+
+        .card button {
+            background-color: #0062cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 15px auto;
+        }
+
+        .card button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -96,9 +108,8 @@
 
     <header class="header1">
         <h1>Cursos de Salud Mental</h1>
-        <p>¡Bienvenido a los Cursos de Salud Mental de Tranquiliza! 🌿✨
-            <br> Nos alegra que estés aquí. Explora nuestros cursos diseñados para ayudarte a encontrar equilibrio,
-            bienestar
+        <p>¡Bienvenido a los Cursos de Salud Mental de Tranquiliza! 🌿✨<br>
+            Nos alegra que estés aquí. Explora nuestros cursos diseñados para ayudarte a encontrar equilibrio, bienestar
             y crecimiento personal. <br> ¡Comienza tu viaje hacia una mente más tranquila y saludable hoy mismo!
         </p>
     </header>
@@ -106,79 +117,100 @@
     <section class="courses">
         <div class="card">
             <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 1</h2>
+                <img src="img/cursos/curso1.jpg" alt="Curso 1">
+                <p>Desarrollo personal</p>
+                <h2>Presentaciones efectivas</h2>
+                <button>▶️ Empezar</button>
             </a>
         </div>
         <div class="card">
             <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 1</h2>
+                <img src="img/cursos/curso2.jpg" alt="Curso 1">
+                <p>Desarrollo personal</p>
+                <h2>Inteligencia emocional</h2>
+                <button>▶️ Empezar</button>
             </a>
         </div>
         <div class="card">
             <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 1</h2>
+                <img src="img/cursos/curso3.jpg" alt="Curso 1">
+                <p>Desarrollo personal</p>
+                <h2>Efectividad personal</h2>
+                <button>▶️ Empezar</button>
             </a>
         </div>
         <div class="card">
             <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 1</h2>
+                <img src="img/cursos/curso4.jpg" alt="Curso 1">
+                <p>Desarrollo personal</p>
+                <h2>Amar lo que haces</h2>
+                <button>▶️ Empezar</button>
             </a>
         </div>
         <div class="card">
             <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
+                <img src="img/cursos/curso5.png" alt="Curso 1">
+                <p>Desarrollo personal</p>
+                <h2>Aprende a ser feliz</h2>
+                <button>▶️ Empezar</button>
             </a>
         </div>
         <div class="card">
             <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
+                <img src="img/cursos/curso6.png" alt="Curso 1">
+                <p>Desarrollo personal</p>
+                <h2>Habilidades esenciales para mejorar tu vida</h2>
+                <button>▶️ Empezar</button>
             </a>
         </div>
         <div class="card">
             <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
+                <img src="img/cursos/curso7.png" alt="Curso 1">
+                <p>Desarrollo personal</p>
+                <h2>Negociacion y Resolucion de conflictos</h2>
+                <button>▶️ Empezar</button>
             </a>
         </div>
         <div class="card">
             <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
+                <img src="img/cursos/curso8.png" alt="Curso 1">
+                <p>Desarrollo personal</p>
+                <h2>Habilidades de Comunicacíon</h2>
+                <button>▶️ Empezar</button>
             </a>
         </div>
         <div class="card">
             <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
+                <img src="img/cursos/curso9.png" alt="Curso 1">
+                <p>Desarrollo personal</p>
+                <h2>Gestion de emociones</h2>
+                <button>▶️ Empezar</button>
             </a>
         </div>
         <div class="card">
             <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
+                <img src="img/cursos/curso10.jpg" alt="Curso 1">
+                <p>Desarrollo personal</p>
+                <h2>Liderazgo Organizacional</h2>
+                <button>▶️ Empezar</button>
             </a>
         </div>
         <div class="card">
             <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
+                <img src="img/cursos/curso11.png" alt="Curso 1">
+                <p>Desarrollo personal</p>
+                <h2>Una mirada al trabajo del actor</h2>
+                <button>▶️ Empezar</button>
             </a>
         </div>
         <div class="card">
             <a href="">
-                <img src="img/Mask group.png" alt="Curso 1">
-                <h2>Título del Curso 2</h2>
+                <img src="img/cursos/curso12.jpg" alt="Curso 1">
+                <p>Desarrollo personal</p>
+                <h2>Marketing personal </h2>
+                <button>▶️ Empezar</button>
             </a>
         </div>
-
-
-
 
     </section>
 </body>
