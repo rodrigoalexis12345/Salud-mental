@@ -2,16 +2,72 @@
 <html lang="es">
 
 <head>
-    <!--Para poner los tipos de letra-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
-    <!-- Para poner los tipos de letra -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/Mask group.png" type="image/png">
     <link rel="stylesheet" href="estilos.css">
     <title>Tranquiliza</title>
+    <style>
+        body {
+            font-family: "Afacad Flux", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .header2 {
+            background-color: #0062cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .progress-report {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #0062cc;
+            color: white;
+        }
+
+        /* Contenedor para centrar el gráfico */
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            margin: 20px;
+            /* Espacio alrededor del contenedor */
+        }
+
+        #myChart {
+            max-width: 800px;
+            /* Ancho máximo del gráfico */
+            height: 300px;
+            /* Altura del gráfico */
+        }
+    </style>
+    <!-- Incluir Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -32,6 +88,124 @@
             </ul>
         </nav>
     </header>
+
+    <header class="header2">
+        <h1>Reporte de Progreso del Usuario</h1>
+    </header>
+
+    <main>
+        <section class="progress-report">
+            <h2>Progreso Semanal</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Día</th>
+                        <th>Progreso</th>
+                    </tr>
+                </thead>
+                <tbody id="progress-table-body">
+                    <!-- Las filas se generarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Gráfico de Progreso</h2>
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Datos de ejemplo de progreso diario
+        const progressData = [
+            { day: 'Lunes', exercise: 30, meditation: 10 },
+            { day: 'Martes', exercise: 45, meditation: 15 },
+            { day: 'Miércoles', exercise: 20, meditation: 5 },
+            { day: 'Jueves', exercise: 50, meditation: 20 },
+            { day: 'Viernes', exercise: 30, meditation: 10 },
+            { day: 'Sábado', exercise: 60, meditation: 30 },
+            { day: 'Domingo', exercise: 0, meditation: 0 },
+        ];
+
+        function loadProgress() {
+            const tableBody = document.getElementById('progress-table-body');
+            progressData.forEach(entry => {
+                const row = document.createElement('tr');
+                const dayCell = document.createElement('td');
+                const progressCell = document.createElement('td');
+
+                dayCell.textContent = entry.day;
+                progressCell.textContent = `Ejercicio: ${entry.exercise} minutos, Meditación: ${entry.meditation} minutos`;
+
+                row.appendChild(dayCell);
+                row.appendChild(progressCell);
+                tableBody.appendChild(row);
+            });
+        }
+
+        function createChart() {
+            const ctx = document.getElementById('myChart').getContext('2d');
+            const labels = progressData.map(entry => entry.day);
+            const exerciseData = progressData.map(entry => entry.exercise);
+            const meditationData = progressData.map(entry => entry.meditation);
+
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Ejercicio (minutos)',
+                            data: exerciseData,
+                            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Meditación (minutos)',
+                            data: meditationData,
+                            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Minutos'
+                            },
+                            ticks: {
+                                font: {
+                                    size: 16 // Tamaño de fuente para los números del eje y
+                                }
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Días'
+                            },
+                            ticks: {
+                                font: {
+                                    size: 16 // Tamaño de fuente para las etiquetas del eje x
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Cargar el progreso y crear el gráfico al iniciar la página
+        loadProgress();
+        createChart();
+    </script>
 </body>
 
 </html>
